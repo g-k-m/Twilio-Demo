@@ -1,0 +1,90 @@
+@import "../07-utilities/utilities-variables.scss";
+@import "../07-utilities/utilities-placeholders.scss";
+@import "../07-utilities/utilities-mixins.scss";
+
+.content {
+    .new__items {
+        font-family: $montserrat;
+
+        display: grid;
+        grid-template-columns: [left] 20% [middle] auto [right] 17%;
+        grid-template-rows: [first] 20% [second] 80%;
+
+        margin-top: 5rem;
+
+        width: 100%;
+
+        h3 {
+            @include gridColumnPlacement(left, end);
+            @include gridRowPlacement(first, second);
+
+            justify-self: center;
+
+            font-weight: 400;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        ul.new__items__list {
+            @include gridColumnPlacement(middle, right);
+            @include gridRowPlacement(second, end);
+            
+            li {
+                &:nth-child(3n+1) {
+                    margin-right: 2rem;
+                }
+                
+                &:nth-child(3n+3) {
+                    margin-left: 2rem;
+                }
+
+                display: inline-block;
+
+                img.new__items__list__product {
+                    width: 22.5rem;
+                    height: auto;
+                }
+
+                h4 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #2b2b2b;
+                    width: 22.5rem;
+
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+
+                    &:hover {
+                        color: #999;
+                        transition: color .2s, opacity .2s;
+                    }
+                }
+
+                hr {
+                    margin-bottom: 0.35rem;
+                    color: #999;
+                }
+
+                .new__items__list__price {
+                    font-weight: 700;
+                    font-size: 13px;
+                    text-align: left;
+                }
+
+                .new__items__list__icons {
+                    text-align: right;
+
+                    img {
+                        float: right;
+
+                        width: 14px;
+                        height: auto;
+
+                        margin: 0 0.25rem;
+                    }
+                }
+                
+            }
+        }
+    }
+}

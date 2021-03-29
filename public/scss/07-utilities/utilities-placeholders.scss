@@ -1,0 +1,14 @@
+%leftToMiddle {
+    grid-column-start: left;
+    grid-column-end: middle;
+}
+
+%middleToRight {
+    grid-column-start: middle;
+    grid-column-end: right;
+}
+
+%rightToEnd {
+    grid-column-start: right;
+    grid-column-end: end;
+}

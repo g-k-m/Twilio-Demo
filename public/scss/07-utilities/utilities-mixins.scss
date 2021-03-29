@@ -1,0 +1,9 @@
+@mixin gridColumnPlacement($start, $end) {
+    grid-column-start: $start;
+    grid-column-end: $end;
+}
+
+@mixin gridRowPlacement($start, $end) {
+    grid-row-start: $start;
+    grid-row-end: $end;
+}

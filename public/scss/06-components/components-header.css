@@ -1,0 +1,78 @@
+.header {
+  display: grid;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 80px;
+}
+
+.header .header__nav {
+  display: grid;
+  grid-template-columns: [left] 34% [middle] auto [right] 13%;
+  grid-template-rows: [start] 100%;
+  align-items: center;
+}
+
+.header img.header__nav__logo {
+  grid-column-start: left;
+  grid-column-end: middle;
+  grid-row-start: start;
+  grid-row-end: end;
+  margin-left: 375px;
+}
+
+.header img.header__nav__logo:hover {
+  cursor: pointer;
+}
+
+.header .header__nav__navbar {
+  grid-column-start: middle;
+  grid-column-end: right;
+  grid-row-start: start;
+  grid-row-end: end;
+}
+
+.header .header__nav__navbar li {
+  margin: 0 1.1rem;
+}
+
+.header .header__nav__navbar li a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.header .header__nav__navbar li a .activePage {
+  color: #dbc3b0;
+}
+
+.header .header__nav__navbar li a:hover {
+  color: #dbc3b0;
+}
+
+.header .header__nav__navbar__user {
+  grid-column-start: right;
+  grid-column-end: end;
+  grid-row-start: start;
+  grid-row-end: end;
+}
+
+.header .header__nav__navbar__user li {
+  margin: 0 0.4rem;
+}
+
+.header .header__nav__navbar__user li img {
+  width: 25px;
+  height: auto;
+}
+
+.divider {
+  border: none;
+  width: 100%;
+  height: 1px;
+  color: lightgray;
+  background-color: lightgray;
+}

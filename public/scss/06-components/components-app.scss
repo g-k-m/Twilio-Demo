@@ -1,0 +1,311 @@
+@import "../07-utilities/utilities-mixins.scss";
+
+body {
+    background-color: white;
+}
+
+main {
+    @media only screen and (min-width: 1300px) {
+        width: 1282px;
+        margin: 0 auto;
+    }
+}
+
+a.site-logo-link {
+    margin-right: 5rem;
+}
+
+img.site-logo {
+    width: 250px;
+    height: auto;
+}
+
+a.nav-link {
+    font-size: 1rem;
+    color: black !important;
+}
+.mr-auto,
+.ml-auto {
+    display: flex;
+
+    align-items: center;
+}
+
+.mr-auto {
+    li.nav-item {
+        margin-left: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    ul.navbar-nav.mr-auto {
+        position: relative;
+        right: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    ul.navbar-nav.mr-auto {
+        position: relative;
+        right: 10rem;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    ul.navbar-nav.mr-auto {
+        position: relative;
+        right: 15rem !important;
+    }
+}
+
+.container__call {
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+
+    margin-top: 50px;
+
+    .container__call__logo {
+        @include gridColumnPlacement(1, 2);
+    }
+
+    .container__call__desc {
+        @include gridColumnPlacement(3, end);
+
+        .container__call__desc__big {
+            font-size: 48px;
+            font-weight: 500;
+        }
+
+        .container__call__desc__small {
+            font-size: 18px;
+        }
+    }
+
+    .container__call__main {
+        @include gridColumnPlacement(2, 3);
+        @include gridRowPlacement(1, 2);
+
+        background-color: rgb(198, 234, 248);
+
+        width: 80%;
+        height: 680px;
+
+        position: relative;
+        bottom: 35px;
+
+        padding: 0 8%;
+        padding-top: 20px;
+
+        .container__call__main__title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .container__call__main__numberLabel {
+            font-size: 16px;
+        }
+
+        .container__call__main__number {
+            height: 50px;
+            width: 100%;
+
+            font-size: 16px;
+
+            border-radius: 5px;
+            border: none;
+            padding: 11px 15px;
+        }
+
+        .container__call__main__messageLabel {
+            margin-top: 30px;
+
+            font-size: 16px;
+        }
+
+        .container__call__main__message {
+            height: 300px;
+            width: 100%;
+
+            font-size: 16px;
+
+            border-radius: 5px;
+            border: none;
+            padding: 11px 15px;
+        }
+
+        .container__call__main__status {
+            margin-top: 10px;
+
+            font-size: 18px;
+            font-weight: 500;
+
+            color: black;
+        }
+
+        .container__call__main__call,
+        .container__call__main__hangup,
+        .container__call__main__submit {
+            position: absolute;
+            bottom: 30px;
+            left: 10%;
+
+            font-size: 24px;
+            font-weight: 500;
+
+            width: 80%;
+            height: 60px;
+
+            border-radius: 5px;
+            border: none;
+
+            color: white;
+            background-color: rgb(25, 172, 226);
+
+            &:hover {
+                background-color: rgb(198, 234, 248);
+
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(25, 172, 226);
+
+                color: black;
+            }
+        }
+
+        .container__call__main__submit {
+            background-color: rgb(255, 158, 71);
+
+            &:hover {
+                background-color: rgb(255, 237, 204);
+
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(255, 158, 71);
+
+                color: black;
+            }
+        }
+    }
+
+    .container__call__main__hangup {
+        visibility: hidden;
+    }
+
+    .container__call__main2 {
+        background-color: rgb(255, 237, 204);
+    }
+}
+
+.container__recommendations {
+    margin-top: 25px !important;
+
+    .container__recommendations__list {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+
+        @media only screen and (min-width: 1001px) {
+            li:nth-child(1) {
+                @include gridColumnPlacement(1, 2);
+            }
+
+            li:nth-child(2) {
+                @include gridColumnPlacement(2, 3);
+            }
+
+            li:nth-child(3) {
+                @include gridColumnPlacement(3, 4);
+            }
+
+            li:nth-child(4) {
+                @include gridColumnPlacement(4, end);
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 50% 50%;
+            justify-items: center;
+            align-items: center;
+
+            li:nth-child(odd) {
+                @include gridColumnPlacement(1, 2);
+            }
+
+            li:nth-child(even) {
+                @include gridColumnPlacement(2, end);
+            }
+        }
+
+        list-style-type: none;
+        padding-inline-start: 0;
+
+        li:nth-child(1) .container__recommendations__list__undercard {
+            border-color: rgb(230, 247, 230);
+        }
+
+        li:nth-child(2) .container__recommendations__list__undercard {
+            border-color: rgb(220, 210, 229);
+        }
+
+        li:nth-child(3) .container__recommendations__list__undercard {
+            border-color: rgb(255, 237, 204);
+        }
+
+        li:nth-child(4) .container__recommendations__list__undercard {
+            border-color: rgb(197, 234, 249);
+        }
+
+        li a {
+            display: grid;
+            grid-template-rows: auto auto;
+
+            text-decoration: none;
+
+            color: black;
+
+            img {
+                width: 92.5%;
+                max-width: 300px;
+                height: auto;
+
+                margin-left: 10px;
+                @include gridRowPlacement(1, 2);
+            }
+
+            .container__recommendations__list__undercard {
+                @include gridRowPlacement(2, end);
+                margin-left: 10px;
+
+                width: 92.5%;
+                max-width: 300px;
+                height: auto;
+
+                border: 1px solid;
+
+                p {
+                    position: relative;
+                    top: 7px;
+                    margin-left: 30px;
+                }
+
+                p:nth-child(1) {
+                    font-size: 16px;
+                    font-weight: 600;
+
+                    margin-bottom: -5px;
+                }
+
+                p:nth-child(2) {
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.chart__container {
+    position: relative;
+    
+    width: 400px;
+    height: 400px;
+}

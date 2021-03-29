@@ -1,0 +1,78 @@
+@import "../07-utilities/utilities-variables.scss";
+@import "../07-utilities/utilities-placeholders.scss";
+@import "../07-utilities/utilities-mixins.scss";
+
+.header {
+    display: grid;
+    align-items: center;
+
+    font-family: $montserrat;
+
+    background-color: white;
+    width: 100%;
+    height: 80px;
+
+    .header__nav {
+        display: grid;
+        grid-template-columns: [left] 34% [middle] auto [right] 13%;
+        grid-template-rows: [start] 100%;
+        align-items: center;
+    }
+    
+    img.header__nav__logo {
+        @include gridColumnPlacement(left, middle);
+        @include gridRowPlacement(start, end);
+
+        margin-left: 375px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .header__nav__navbar {
+        @include gridColumnPlacement(middle, right);
+        @include gridRowPlacement(start, end);
+
+        li {
+            margin: 0 1.1rem;
+
+            a {
+                .activePage {
+                    color: rgb(219, 195, 176)
+                }
+                color: black;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 400;
+                font-size: 12px;
+
+                &:hover {
+                    color: rgb(219, 195, 176);
+                }
+            }
+        }
+    }
+
+    .header__nav__navbar__user {
+        @include gridColumnPlacement(right, end);
+        @include gridRowPlacement(start, end);
+
+        li {
+            margin: 0 0.4rem;
+
+            img {
+                width: 25px;
+                height: auto;
+            }
+        }
+    }
+}
+
+.divider {
+    border: none;
+    width: 100%;
+    height: 1px;
+    color: lightgray;
+    background-color: lightgray;
+}

@@ -1,0 +1,79 @@
+.content .new__items {
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-columns: [left] 20% [middle] auto [right] 17%;
+  grid-template-rows: [first] 20% [second] 80%;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.content .new__items h3 {
+  grid-column-start: left;
+  grid-column-end: end;
+  grid-row-start: first;
+  grid-row-end: second;
+  justify-self: center;
+  font-weight: 400;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.content .new__items ul.new__items__list {
+  grid-column-start: middle;
+  grid-column-end: right;
+  grid-row-start: second;
+  grid-row-end: end;
+}
+
+.content .new__items ul.new__items__list li {
+  display: inline-block;
+}
+
+.content .new__items ul.new__items__list li:nth-child(3n+1) {
+  margin-right: 2rem;
+}
+
+.content .new__items ul.new__items__list li:nth-child(3n+3) {
+  margin-left: 2rem;
+}
+
+.content .new__items ul.new__items__list li img.new__items__list__product {
+  width: 22.5rem;
+  height: auto;
+}
+
+.content .new__items ul.new__items__list li h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  width: 22.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.content .new__items ul.new__items__list li h4:hover {
+  color: #999;
+  transition: color .2s, opacity .2s;
+}
+
+.content .new__items ul.new__items__list li hr {
+  margin-bottom: 0.35rem;
+  color: #999;
+}
+
+.content .new__items ul.new__items__list li .new__items__list__price {
+  font-weight: 700;
+  font-size: 13px;
+  text-align: left;
+}
+
+.content .new__items ul.new__items__list li .new__items__list__icons {
+  text-align: right;
+}
+
+.content .new__items ul.new__items__list li .new__items__list__icons img {
+  float: right;
+  width: 14px;
+  height: auto;
+  margin: 0 0.25rem;
+}
